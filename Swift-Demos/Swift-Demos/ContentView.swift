@@ -8,15 +8,32 @@
 import SwiftUI
 
 struct ContentView: View {
+    @EnvironmentObject var pets: MyPets
     var body: some View {
-        NavigationView {
-            CoreDataView().navigationTitle("People")
+        TabView {
+            NavigationView {
+                CoreDataView().navigationTitle("Core Data: People")
+            }.tabItem({
+                Label("Core Data", systemImage: "")
+            })
+            
+            NavigationView{
+                EnviormentVariablesView().navigationTitle("Env Vars: Pets")
+            }.tabItem({
+                Label("Env Vars", systemImage: "")
+            })
+            
+            NavigationView{
+                AddPetView().navigationTitle("Add Pet")
+            }.tabItem({
+                Label("Add Pet", systemImage: "")
+            })
         }
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        ContentView().environmentObject(MyPets())
     }
 }

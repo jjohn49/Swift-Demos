@@ -9,10 +9,10 @@ import SwiftUI
 
 @main
 struct Swift_DemosApp: App {
+    @StateObject var pets: MyPets = MyPets()
     let persrsistenceController = PersistenceController.shared
     var body: some Scene {
         WindowGroup {
-            ContentView().environment(\.managedObjectContext, persrsistenceController.container.viewContext)
-        }
+            ContentView().environmentObject(pets).environment(\.managedObjectContext, persrsistenceController.container.viewContext)        }
     }
 }
