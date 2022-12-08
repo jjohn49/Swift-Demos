@@ -7,6 +7,22 @@
 
 import SwiftUI
 
+struct EnvVarsViews: View{
+    var body: some View {
+            VStack {
+                NavigationLink("All Pets", destination: {
+                    EnviormentVariablesView().navigationTitle("Env Vars: Pets")
+                })
+                
+                
+                NavigationLink("Add Pets", destination: {
+                    AddPetView().navigationTitle("Add Pet")
+                })
+            }
+        
+    }
+}
+
 struct EnviormentVariablesView: View {
     @EnvironmentObject var pets: MyPets
     var body: some View {

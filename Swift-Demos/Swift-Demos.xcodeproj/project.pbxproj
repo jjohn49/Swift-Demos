@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1E0A1ABC29424AEC0027DE92 /* ChartsViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E0A1ABB29424AEC0027DE92 /* ChartsViews.swift */; };
 		1E74C582293ECC040077251D /* EnviormentVariablesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E74C581293ECC040077251D /* EnviormentVariablesView.swift */; };
 		1E74C584293ECC140077251D /* EnviormentVariables.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E74C583293ECC140077251D /* EnviormentVariables.swift */; };
 		1ED850F52938FCDF00B7C013 /* Swift_DemosApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ED850F42938FCDF00B7C013 /* Swift_DemosApp.swift */; };
@@ -39,6 +40,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1E0A1ABB29424AEC0027DE92 /* ChartsViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartsViews.swift; sourceTree = "<group>"; };
 		1E74C581293ECC040077251D /* EnviormentVariablesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnviormentVariablesView.swift; sourceTree = "<group>"; };
 		1E74C583293ECC140077251D /* EnviormentVariables.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnviormentVariables.swift; sourceTree = "<group>"; };
 		1ED850F12938FCDF00B7C013 /* Swift-Demos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Swift-Demos.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -81,6 +83,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1E0A1ABA29424AD40027DE92 /* Charts */ = {
+			isa = PBXGroup;
+			children = (
+				1E0A1ABB29424AEC0027DE92 /* ChartsViews.swift */,
+			);
+			path = Charts;
+			sourceTree = "<group>";
+		};
 		1E74C57E293ECBAE0077251D /* Core Data */ = {
 			isa = PBXGroup;
 			children = (
@@ -122,6 +132,7 @@
 		1ED850F32938FCDF00B7C013 /* Swift-Demos */ = {
 			isa = PBXGroup;
 			children = (
+				1E0A1ABA29424AD40027DE92 /* Charts */,
 				1E74C580293ECBDE0077251D /* Enviorment Variables */,
 				1E74C57E293ECBAE0077251D /* Core Data */,
 				1ED851202938FD6800B7C013 /* People.xcdatamodeld */,
@@ -295,6 +306,7 @@
 				1E74C582293ECC040077251D /* EnviormentVariablesView.swift in Sources */,
 				1ED850F52938FCDF00B7C013 /* Swift_DemosApp.swift in Sources */,
 				1ED85126293900ED00B7C013 /* CoreDataView.swift in Sources */,
+				1E0A1ABC29424AEC0027DE92 /* ChartsViews.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -18,19 +18,20 @@ struct ContentView: View {
             })
             
             NavigationView{
-                EnviormentVariablesView().navigationTitle("Env Vars: Pets")
+                EnvVarsViews().navigationTitle("Enviorment Variables Demo")
             }.tabItem({
                 Label("Env Vars", systemImage: "")
             })
             
             NavigationView{
-                AddPetView().navigationTitle("Add Pet")
+                ChartsViews().navigationTitle("Chart")
             }.tabItem({
-                Label("Add Pet", systemImage: "")
+                Label("Chart", image: "")
             })
         }
     }
 }
+
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
