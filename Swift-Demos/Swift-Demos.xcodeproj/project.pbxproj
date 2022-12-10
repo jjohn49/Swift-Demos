@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1E01DEED294504F200D1B87F /* MapViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E01DEEC294504F200D1B87F /* MapViews.swift */; };
 		1E0A1ABC29424AEC0027DE92 /* ChartsViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E0A1ABB29424AEC0027DE92 /* ChartsViews.swift */; };
 		1E74C582293ECC040077251D /* EnviormentVariablesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E74C581293ECC040077251D /* EnviormentVariablesView.swift */; };
 		1E74C584293ECC140077251D /* EnviormentVariables.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E74C583293ECC140077251D /* EnviormentVariables.swift */; };
@@ -40,6 +41,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1E01DEEC294504F200D1B87F /* MapViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViews.swift; sourceTree = "<group>"; };
+		1E01DEEE2945053C00D1B87F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		1E0A1ABB29424AEC0027DE92 /* ChartsViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartsViews.swift; sourceTree = "<group>"; };
 		1E74C581293ECC040077251D /* EnviormentVariablesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnviormentVariablesView.swift; sourceTree = "<group>"; };
 		1E74C583293ECC140077251D /* EnviormentVariables.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnviormentVariables.swift; sourceTree = "<group>"; };
@@ -83,6 +86,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1E01DEEB294504E400D1B87F /* MapKit */ = {
+			isa = PBXGroup;
+			children = (
+				1E01DEEC294504F200D1B87F /* MapViews.swift */,
+			);
+			path = MapKit;
+			sourceTree = "<group>";
+		};
 		1E0A1ABA29424AD40027DE92 /* Charts */ = {
 			isa = PBXGroup;
 			children = (
@@ -132,6 +143,8 @@
 		1ED850F32938FCDF00B7C013 /* Swift-Demos */ = {
 			isa = PBXGroup;
 			children = (
+				1E01DEEE2945053C00D1B87F /* Info.plist */,
+				1E01DEEB294504E400D1B87F /* MapKit */,
 				1E0A1ABA29424AD40027DE92 /* Charts */,
 				1E74C580293ECBDE0077251D /* Enviorment Variables */,
 				1E74C57E293ECBAE0077251D /* Core Data */,
@@ -301,6 +314,7 @@
 			files = (
 				1ED851242938FE3300B7C013 /* CoreDataDemo.swift in Sources */,
 				1ED851222938FD6800B7C013 /* People.xcdatamodeld in Sources */,
+				1E01DEED294504F200D1B87F /* MapViews.swift in Sources */,
 				1ED850F72938FCDF00B7C013 /* ContentView.swift in Sources */,
 				1E74C584293ECC140077251D /* EnviormentVariables.swift in Sources */,
 				1E74C582293ECC040077251D /* EnviormentVariablesView.swift in Sources */,
@@ -468,6 +482,7 @@
 				DEVELOPMENT_TEAM = 5PWVWU8526;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Swift-Demos/Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -497,6 +512,7 @@
 				DEVELOPMENT_TEAM = 5PWVWU8526;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Swift-Demos/Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
