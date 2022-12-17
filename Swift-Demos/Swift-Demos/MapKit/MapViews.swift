@@ -7,19 +7,19 @@
 
 import SwiftUI
 import MapKit
+import CoreLocation
 
 
 struct MapViews: View {
     
-    @State private var mapRe = MKCoordinateRegion(.world)
+    @State private var mapRe: MKCoordinateRegion = MKCoordinateRegion(.world)
     @State var searchLocation: String = ""
     @State var locationToSearch: MKMapItem = MKMapItem()
     @State var dropDownLocations: [MKMapItem] = []
     let searchRequest = MKLocalSearch.Request()
     
+    
     var body: some View {
-        
-        
         
         ZStack {
             
@@ -31,14 +31,16 @@ struct MapViews: View {
                         try await findLocation(location:searchLocation)
                     }
                 }
-                List{
+                ScrollView{
                     ForEach(dropDownLocations, id: \.self){ item in
                         Button(action: {
-                            print(item.name ?? "Unknown Location")
                             locationToSearch = item
+                            withAnimation{
+                                changeLocation()
+                            }
                         }, label: {
-                            Text(item.name ?? item.description)
-                        })
+                            Text(item.name ?? "unknown").foregroundColor(.black)
+                        }).frame(width: 350, height: 30).padding().font(.title3).background(.gray).cornerRadius(10).opacity(0.7)
                     }
                 }
                 Spacer()
@@ -47,6 +49,7 @@ struct MapViews: View {
     }
     
     func findLocation(location: String) async throws{
+        dropDownLocations = []
         print("------------------------------------")
         searchRequest.naturalLanguageQuery = location
         let search = MKLocalSearch(request: searchRequest)
@@ -61,6 +64,13 @@ struct MapViews: View {
                 dropDownLocations.append(item)
             }
         }
+    }
+    
+    func changeLocation(){
+        let coordinates = locationToSearch.placemark.coordinate
+        let clLocation = locationToSearch.placemark.location
+        let coordinateSpan = MKCoordinateSpan(latitudeDelta: 10, longitudeDelta: 10)
+        mapRe = MKCoordinateRegion(center: coordinates, span: coordinateSpan)
     }
 }
 
