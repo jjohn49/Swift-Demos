@@ -28,6 +28,10 @@ struct ContentView: View {
             }.tabItem({
                 Label("Chart", image: "")
             })
+            
+            MapViews().tabItem({
+                Label("Maps", systemImage: "globe")
+            })
         }
     }
 }

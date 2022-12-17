@@ -13,31 +13,41 @@ struct MapViews: View {
     
     @State private var mapRe = MKCoordinateRegion(.world)
     @State var searchLocation: String = ""
+    @State var locationToSearch: MKMapItem = MKMapItem()
+    @State var dropDownLocations: [MKMapItem] = []
     let searchRequest = MKLocalSearch.Request()
     
     var body: some View {
         
+        
+        
+        ZStack {
             
-        TabView {
-            ZStack {
+            Map(coordinateRegion: $mapRe).ignoresSafeArea()
+            VStack {
                 
-                Map(coordinateRegion: $mapRe).ignoresSafeArea()
-                VStack {
-                    
-                    TextField("Type a location", text: $searchLocation).frame(width: 350, height: 50).padding().font(.title).background(.gray).cornerRadius(10).onSubmit {
-                        Task{
-                            try await findLocation(location:searchLocation)
-                        }
+                TextField("Type a location", text: $searchLocation).frame(width: 350, height: 50).padding().font(.title).background(.gray).cornerRadius(10).onSubmit {
+                    Task{
+                        try await findLocation(location:searchLocation)
                     }
-                    Spacer()
                 }
-            }.tabItem({
-                Label("Map", systemImage: "globe").bold().font(.title)
-            })
+                List{
+                    ForEach(dropDownLocations, id: \.self){ item in
+                        Button(action: {
+                            print(item.name ?? "Unknown Location")
+                            locationToSearch = item
+                        }, label: {
+                            Text(item.name ?? item.description)
+                        })
+                    }
+                }
+                Spacer()
+            }
         }
     }
     
     func findLocation(location: String) async throws{
+        print("------------------------------------")
         searchRequest.naturalLanguageQuery = location
         let search = MKLocalSearch(request: searchRequest)
         
@@ -48,7 +58,7 @@ struct MapViews: View {
             }
             
             for item in response.mapItems{
-                print(item.placemark)
+                dropDownLocations.append(item)
             }
         }
     }
